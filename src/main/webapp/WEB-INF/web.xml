@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <display-name>????</display-name>
-    <description>????v1.0</description>
+    <display-name>订餐系统</display-name>
+    <description>订餐系统v1.0</description>
 
-    <!-- ????? -->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -21,16 +20,13 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- Spring??? ??????????-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    <!--??Spring???????-->
     <listener>
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
     </listener>
 
-    <!--spring???????(??mybatis????) -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
@@ -38,7 +34,6 @@
         </param-value>
     </context-param>
 
-    <!--log4j??-->
     <context-param>
         <param-name>log4jConfigLocation</param-name>
         <param-value>
@@ -46,11 +41,10 @@
         </param-value>
     </context-param>
 
-    <!-- ??DispatcherServlet -->
+    <!-- DispatcherServlet -->
     <servlet>
         <servlet-name>SpringMVC</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!-- ??springMVC?????????-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:spring-mvc.xml</param-value>

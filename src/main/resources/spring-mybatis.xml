@@ -9,8 +9,6 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
-    <!-- 自动扫描，Bean注入 -->
-    <context:component-scan base-package="com.sut"/>
 
     <!-- 读取配置文件信息 -->
     <context:property-placeholder ignore-unresolvable="true" location="classpath:jdbc.properties"/>
@@ -55,11 +53,11 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!-- 自动扫描Mapping.xml文件 -->
-        <property name="mapperLocations" value="classpath:com/sut/mapper/xml/*.xml"/>
+        <property name="mapperLocations" value="classpath:com/sut/mapper/*.xml"/>
         <!-- 配置MyBaties全局配置文件:mybatis-config.xml -->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <!-- 扫描model包 xml中parameterType就可以使用类名，不用全路径 -->
-        <property name="typeAliasesPackage" value="com.test.model"/>
+        <property name="typeAliasesPackage" value="com.sut.model"/>
     </bean>
 
     <!-- 加载 mapper.xml对应的接口 配置文件 -->

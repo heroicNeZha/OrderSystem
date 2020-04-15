@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sut.mapper.UserMapper">
+    <select id="employeeList" resultType="User">
+        select ID, name, phone, address from User where permission = '0' order by ID desc
+    </select>
+
+    <select id="customerList" resultType="User">
+        select ID, name, phone, address, vip_date from User where permission = '1' order by ID desc
+  </select>
+</mapper>
