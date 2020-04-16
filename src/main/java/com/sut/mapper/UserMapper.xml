@@ -5,10 +5,18 @@
 
 <mapper namespace="com.sut.mapper.UserMapper">
     <select id="employeeList" resultType="User">
-        select ID, name, phone, address from User where permission = '0' order by ID desc
+        select ID, username ,name, phone, address from User where permission = '0' order by ID desc
     </select>
 
+    <select id="getEmployee" resultType="User" parameterType="int">
+        select ID,username, name, phone, address from User where permission = '0' AND ID = #{id} order by ID desc
+  </select>
+
     <select id="customerList" resultType="User">
-        select ID, name, phone, address, vip_date from User where permission = '1' order by ID desc
+        select ID,username, name, phone, address, vip_date from User where permission = '1' order by ID desc
+  </select>
+
+    <select id="getCustomer" resultType="User" parameterType="int">
+        select ID,username, name, phone, address,vip_date from User where permission = '1' AND ID = #{id} order by ID desc
   </select>
 </mapper>

@@ -8,8 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap-table.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap-editable.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap-theme.min.css">
 <script src="${pageContext.request.contextPath}/static/js/jquery-3.5.0.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/bootstrap-table.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/bootstrap-editable.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/bootstrap-table-editable.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/js/bootstrap-table-zh-CN.min.js"></script>

@@ -8,4 +8,8 @@ public interface UserService {
     List<User> customerList();
 
     List<User> employeeList();
+
+    User getCustomer(int id);
+
+    User getEmployee(int id);
 }
