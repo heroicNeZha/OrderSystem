@@ -12,4 +12,10 @@ public interface UserService {
     User getCustomer(int id);
 
     User getEmployee(int id);
+
+    int editEmployee(User user);
+
+    int addEmployee(User user);
+
+    int deleteEmployee(int id);
 }

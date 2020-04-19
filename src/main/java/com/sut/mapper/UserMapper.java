@@ -5,11 +5,19 @@ import com.sut.model.User;
 import java.util.List;
 
 public interface UserMapper {
-    List<User> employeeList();
+    //    Customer
+    User getCustomer(int id);
 
     List<User> customerList();
 
-    User getCustomer(int id);
-
+    //    Employee
     User getEmployee(int id);
+
+    List<User> employeeList();
+
+    int editEmployee(User user);
+
+    int addEmployee(User user);
+
+    int deleteEmployee(int id);
 }

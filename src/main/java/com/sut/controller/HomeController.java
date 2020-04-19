@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("")
@@ -16,7 +19,7 @@ public class HomeController {
     UserService userService;
 
     @RequestMapping("home")
-    public String home(Model model) {
-        return "admin/employee";
+    public ModelAndView home(Model model) {
+        return new ModelAndView("admin/employee");
     }
 }

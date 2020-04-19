@@ -32,4 +32,19 @@ public class UserServiceImpl implements UserService {
     public User getEmployee(int id) {
         return userMapper.getEmployee(id);
     }
+
+    @Override
+    public int editEmployee(User user) {
+        return userMapper.editEmployee(user);
+    }
+
+    @Override
+    public int addEmployee(User user) {
+        return userMapper.addEmployee(user);
+    }
+
+    @Override
+    public int deleteEmployee(int id) {
+        return userMapper.deleteEmployee(id);
+    }
 }

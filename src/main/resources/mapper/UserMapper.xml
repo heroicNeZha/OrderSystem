@@ -19,4 +19,16 @@
     <select id="getCustomer" resultType="User" parameterType="int">
         select ID,username, name, phone, address,vip_date from User where permission = '1' AND ID = #{id} order by ID desc
   </select>
+
+    <update id="editEmployee" parameterType="User">
+        UPDATE orderSystem.User t SET t.username = #{username}, t.name = #{name}, t.phone = #{phone}, t.address = #{address} WHERE t.ID = #{ID}
+    </update>
+
+    <insert id="addEmployee" parameterType="User">
+        INSERT INTO orderSystem.User VALUES (null,#{username},#{password}, #{name},null, #{phone}, #{address},null ,0)
+    </insert>
+
+    <delete id="deleteEmployee" parameterType="int">
+        DELETE FROM orderSystem.User WHERE ID = #{id}
+    </delete>
 </mapper>

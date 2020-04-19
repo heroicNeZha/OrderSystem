@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
@@ -45,14 +47,37 @@ public class UserController {
     }
 
     @RequestMapping(path = "/employee/", method = RequestMethod.PUT)
-    public int editEmployee(@RequestParam("user") User user) {
-        System.out.println(user.toString());
-        return 4;
+    @ResponseBody
+    public Map<String, Object> editEmployee(@RequestBody User user) {
+        Map<String, Object> map = new HashMap<>();
+        if (userService.editEmployee(user) > 0) {
+            map.put("result", "SUCCESS");
+        } else {
+            map.put("result", "没有更新");
+        }
+        return map;
     }
 
     @RequestMapping(path = "/employee/", method = RequestMethod.POST)
-    public int addEmployee(@RequestBody User user) {
-        System.out.println(user.toString());
-        return 4;
+    public ModelAndView addEmployee(User user) {
+        Map<String, Object> map = new HashMap<>();
+        if (userService.addEmployee(user) > 0) {
+            map.put("result", "SUCCESS");
+        } else {
+            map.put("result", "添加失败");
+        }
+        return new ModelAndView("admin/employee", map);
+    }
+
+    @RequestMapping(path = "/employee/", method = RequestMethod.DELETE)
+    @ResponseBody
+    public Map<String, Object> deleteEmployee(@RequestBody int id) {
+        Map<String, Object> map = new HashMap<>();
+        if (userService.deleteEmployee(id) > 0) {
+            map.put("result", "SUCCESS");
+        } else {
+            map.put("result", "删除失败");
+        }
+        return map;
     }
 }
